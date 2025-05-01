@@ -45,16 +45,12 @@ for page in range(1, 23):
 
             if player_td:
                 name_tag = player_td.find('a')
-                position_tag = player_td.find('span', class_='sub-text d-none d-md-block')
-
                 player_name = name_tag.get_text(strip=True).lower() if name_tag else 'n/a'
-                position = position_tag.get_text(strip=True) if position_tag else 'n/a'
                 value = value_td.get_text(strip=True) if value_td else 'n/a'
 
                 if player_name in existing_players:
                     data.append({
                         'Player': player_name.title(),  
-                        'Position': position,
                         'Transfer Value': value
                     })
 
